@@ -1,0 +1,24 @@
+<template>
+    <template if:true={showModal}>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" class={sizeClass}>
+            <div class="slds-modal__container">
+                <lightning-button-icon icon-name="utility:close" alternative-text="Close" title="Close"
+                    onclick={closeModal} class="slds-modal__close slds-button_icon-inverse"></lightning-button-icon>
+                <template if:true={header}>
+                    <div class="slds-modal__header">
+                        <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">
+                            {header}
+                        </h1>
+                    </div>
+                </template>
+                <div class="slds-modal__content slds-var-p-around_medium" id="modal-content-id-1">
+                    <slot></slot>
+                </div>
+                <div class="slds-modal__footer">
+                    <slot name="footer" onslotchange={handleFooterSlotChange}></slot>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+    </template>
+</template>
