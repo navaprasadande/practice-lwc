@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_practice_lwc_1774675311158-push-trigger-input-set
+  identifier: Build_practice_lwc_1774675311158pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_practice_lwc_1774675311158
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
